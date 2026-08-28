@@ -1,0 +1,94 @@
+const int btnEsquerda = 4; 
+const int btnMeio     = 3;
+const int btnDireita  = 2;
+
+const int ledVermelho = 5; 
+const int ledVerde    = 6; 
+
+const int rele1 = 10;    
+const int rele2 = 11;    
+
+bool ligado = false;
+bool portaAberta = false;
+bool ultimoBtnMeio = LOW;
+
+unsigned long tempoAnterior = 0;
+const long tempoPisca = 250;
+bool estadoLED = LOW;
+
+void setup() {
+  pinMode(btnEsquerda, INPUT);
+  pinMode(btnMeio, INPUT);
+  pinMode(btnDireita, INPUT);
+
+  pinMode(ledVermelho, OUTPUT);
+  pinMode(ledVerde, OUTPUT);
+  pinMode(rele1, OUTPUT);
+  pinMode(rele2, OUTPUT);
+
+  desligarMotor();
+}
+
+void loop() {
+  unsigned long tempoAtual = millis();
+
+
+  bool leituraMeio = digitalRead(btnMeio);
+  if (leituraMeio == HIGH && ultimoBtnMeio == LOW) {
+    ligado = !ligado;
+    desligarMotor();
+    delay(150); // Trava debounce
+  }
+  ultimoBtnMeio = leituraMeio;
+
+
+  if (ligado) {
+
+    if (digitalRead(btnEsquerda) == HIGH) {
+      abrirMotor();
+      portaAberta = true;
+    }
+  
+    else if (digitalRead(btnDireita) == HIGH) {
+      fecharMotor();
+      portaAberta = false;
+    }
+    else {
+      desligarMotor();
+    }
+
+       if (tempoAtual - tempoAnterior >= tempoPisca) {
+      tempoAnterior = tempoAtual;
+      estadoLED = !estadoLED;
+
+      if (portaAberta) {
+        digitalWrite(ledVerde, estadoLED);   
+        digitalWrite(ledVermelho, LOW);
+      } else {
+        digitalWrite(ledVermelho, estadoLED);
+        digitalWrite(ledVerde, LOW);
+      }
+    }
+
+  } else {
+
+    digitalWrite(ledVermelho, LOW);
+    digitalWrite(ledVerde, LOW);
+    desligarMotor();
+  }
+}
+
+void abrirMotor() {
+  digitalWrite(rele1, HIGH);
+  digitalWrite(rele2, LOW);
+}
+
+void fecharMotor() {
+  digitalWrite(rele1, LOW);
+  digitalWrite(rele2, HIGH);
+}
+
+void desligarMotor() {
+  digitalWrite(rele1, LOW);
+  digitalWrite(rele2, LOW);
+}
