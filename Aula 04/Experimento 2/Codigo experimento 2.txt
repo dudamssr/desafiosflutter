@@ -1,0 +1,21 @@
+int a = 4, b = 5, c = 6, d = 7, e = 8, f = 9, g = 10;
+int botao = 2;
+int num = 0;
+int entrada[7] = {a,b,c,d,e,f,g};
+int display[10][7] = {{a,b,c,d,e,f},{b,c},{a,b,d,e,g},{a,b,c,d,g},{b,c,f,g},{a,c,d,f,g},{a,c,d,e,f,g},{a,b,c},{a,b,c,d,e,f,g},{a,b,c,f,g}};
+void setup() {
+	for(int i=0;i<7;i++) pinMode(entrada[i],OUTPUT);
+	pinMode(botao,INPUT);
+}
+void loop() {
+	int click = digitalRead(botao);
+	delay(100); //Evitar flutuaçao no clique
+	if(click) num++;
+	if(num < 10) numero(num); else num = 0;
+}
+void numero(int coluna) {
+	for(int i=0;i<7;i++) digitalWrite(entrada[i],1);
+	for(int linha=0;linha<7;linha++){
+		digitalWrite(display[coluna][linha],0);
+	}
+}

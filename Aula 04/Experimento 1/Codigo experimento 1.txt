@@ -1,0 +1,24 @@
+#include <Servo.h>
+
+Servo meuServo;
+
+const int pinoPotenciometro = A0;
+const int pinoServo = 11;
+
+int valorPotenciometro = 0;
+int anguloServo = 0;
+
+void setup() {
+  // Conecta o servo ao pino digital 11
+  meuServo.attach(pinoServo);
+}
+
+void loop() {
+  valorPotenciometro = analogRead(pinoPotenciometro);
+
+  anguloServo = map(valorPotenciometro, 0, 1023, 0, 180);
+  
+  meuServo.write(anguloServo);
+  
+  delay(15);
+}

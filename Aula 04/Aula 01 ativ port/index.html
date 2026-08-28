@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portão Inteligente</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Biblioteca para criar os gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <aside class="sidebar">
+
+            <h1>🚪</h1>
+
+            <h2>PORTÃO<br>INTELIGENTE</h2>
+
+            <p>Dashboard de Atividades</p>
+
+            <nav>
+                <a class="ativo">🏠 Dashboard</a>
+                <a>📅 Diário</a>
+                <a>📊 Semanal</a>
+                <a>📄 Relatórios</a>
+            </nav>
+
+            <div class="status">
+                <span></span>
+                Sistema conectado
+                <small>Arduino</small>
+            </div>
+
+        </aside>
+
+
+        <main>
+
+            <header>
+                <div>
+                    <h1>Olá, Administrador!</h1>
+                    <p>Confira o resumo das atividades do portão.</p>
+                </div>
+
+                <div class="mes">
+                    Maio de 2026
+                </div>
+            </header>
+
+
+            <!-- CARDS -->
+
+            <section class="cards">
+
+                <div class="card">
+                    <div class="icone azul">↕</div>
+
+                    <div>
+                        <strong id="total">0</strong>
+                        <p>Total de Aberturas</p>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="icone verde">📅</div>
+
+                    <div>
+                        <strong id="media">0</strong>
+                        <p>Média Diária</p>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="icone roxo">↗</div>
+
+                    <div>
+                        <strong id="pico">0</strong>
+                        <p>Maior Pico Diário</p>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="icone laranja">◷</div>
+
+                    <div>
+                        <strong>08:00</strong>
+                        <p>Horário de Pico</p>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- GRÁFICOS -->
+
+            <section class="graficos">
+
+                <div class="grafico">
+                    <h2>Atividade do Portão (Diária)</h2>
+
+                    <canvas id="graficoDiario"></canvas>
+                </div>
+
+
+                <div class="grafico">
+                    <h2>Atividade do Portão (Semanal)</h2>
+
+                    <canvas id="graficoSemanal"></canvas>
+                </div>
+
+            </section>
+
+
+            <div class="dados">
+                <h2>Sobre os Dados</h2>
+
+                <p>
+                    Dados referentes ao histórico de abertura
+                    do portão durante Maio de 2026.
+                </p>
+
+                <small>
+                    Fonte: dados.csv
+                </small>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
