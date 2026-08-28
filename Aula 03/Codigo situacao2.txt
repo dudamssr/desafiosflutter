@@ -1,0 +1,31 @@
+int fotoresistor = A0;
+
+int leds[] = {
+  2, 3, 4, 5, 6,
+  7, 8, 9, 10, 11
+};
+
+void setup() {
+  for (int i = 0; i < 10; i++) {
+    pinMode(leds[i], OUTPUT);
+  }
+}
+
+void loop() {
+
+  int luz = analogRead(fotoresistor);
+
+  int quantidade = map(luz, 0, 600, 0, 10);
+
+  quantidade = constrain(quantidade, 0, 10);
+
+  for (int i = 0; i < 10; i++) {
+    if (i < quantidade) {
+      digitalWrite(leds[i], HIGH);
+    } else {
+      digitalWrite(leds[i], LOW);
+    }
+  }
+
+  delay(50);
+}
