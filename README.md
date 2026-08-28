@@ -1,144 +1,103 @@
-#  Automação com Arduino
+# Projeto IoT
 
-## Descrição do Projeto
+## Descrição
 
-Durante as atividades foram desenvolvidos diferentes experimentos envolvendo sensores, atuadores, componentes eletrônicos e interfaces visuais, aplicando conceitos de automação residencial, pessoal e industrial.
-
-O projeto também inclui a criação de um protótipo de portão eletrônico automatizado e um Dashboard Web para análise dos dados de acionamento do portão.
+Projetos desenvolvidos nas aulas 2, 3, 4, envolvendo simulações com Arduino, componentes eletrônicos, sensores, atuadores e desenvolvimento de uma interface Web para visualização de dados.
 
 ---
 
-## Objetivo
+## Aula 02 - Componentes e Circuitos
 
-Desenvolver conhecimentos práticos sobre:
+### Simulação 01 - Fotoresistor e Transistor
 
-- Automação
-- Sensores e atuadores
-- Arduino
-- Componentes eletrônicos
-- Interfaces de entrada e saída
-- Desenvolvimento Web
-- Visualização de dados
-- Interatividade
+Foi desenvolvido um circuito utilizando LDR, transistor NPN e LED, simulando um poste que acende automaticamente no escuro e apaga durante o dia.
 
----
+### Simulação 02 - Interruptor e LEDs
 
-##  Tecnologias e Componentes
+Foi desenvolvido um circuito simples utilizando um interruptor e dois LEDs, representando um sinalizador de garagem.
 
-###  Desenvolvimento
+### Simulação 03 - Capacitor
 
-- Arduino
-- HTML
-- CSS
-- JavaScript
-- GitHub Pages
-- Tinkercad
+Foi desenvolvido um sinalizador utilizando transistor NPN e capacitor, criando um atraso na troca dos LEDs.
 
-### Componentes
+### Arduino UNO
 
-- Arduino UNO R3
-- Potenciômetros
-- LEDs
-- Resistores
-- Servo motor
-- Capacitor
-- Display de 7 segmentos
-- Botões
-- Motor CC
-- Relês DPDT
-- Bateria de 9V
+Foi desenvolvido um circuito com Arduino UNO e dois LEDs, fazendo com que as luzes acendam alternadamente.
 
 ---
 
-##  Experimentos Desenvolvidos
+## Aula 03 - Arduino
 
-### Potenciômetro e LED
+### Semáforo de Duas Vias
 
-Foi desenvolvido um circuito utilizando Arduino UNO, potenciômetro, LED vermelho e resistor.
+Foi desenvolvido um protótipo de semáforo utilizando Arduino UNO, com dois semáforos sincronizados.
 
-O potenciômetro controla a leitura analógica e, de acordo com seu valor, o LED é acionado ou desligado.
+O sistema foi programado para controlar os semáforos de forma sincronizada, evitando que os dois lados fiquem verdes simultaneamente.
+
+### Pista de Pouso
+
+Foi desenvolvido um circuito representando a iluminação de uma pista de pouso utilizando um fotoresistor e LEDs.
+
+O sistema utiliza o nível de luminosidade para controlar os LEDs da pista.
 
 ---
+
+## Aula 04 - Arduino e Automação
 
 ### Servo Motor
 
-Experimento de controle de um Micro Servo utilizando um potenciômetro.
-
-O desafio consiste em controlar o giro do servo motor de acordo com a posição do potenciômetro.
-
----
+Foi desenvolvido um experimento utilizando potenciômetro e micro servo, controlando o movimento do servo de acordo com a posição do potenciômetro.
 
 ### Display de 7 Segmentos
 
-Foi desenvolvido um contador utilizando Arduino UNO, display de 7 segmentos e botão.
+Foi desenvolvido um contador utilizando Arduino UNO, botão e display de 7 segmentos, mostrando valores de 0 a 9.
 
-O sistema realiza a contagem de 0 a 9 conforme o botão é pressionado.
+Também foi realizado o desafio de utilizar um potenciômetro e dois displays para representar valores de 00 a 99.
 
-Como desafio, o projeto também propõe:
+### Portão Eletrônico
 
-- Substituir o botão por um potenciômetro
-- Controlar os valores de 0 a 9 através do potenciômetro
-- Adicionar um segundo display
-- Ampliar a contagem para valores de 00 a 99
+Foi desenvolvido um protótipo de portão eletrônico utilizando Arduino UNO, motor e relês.
+
+O projeto também possui dois LEDs, vermelho e verde, que piscam alternadamente para sinalizar a saída da garagem.
 
 ---
 
-## Portão Eletrônico
+## Dashboard Web
 
-Foi desenvolvido um protótipo de um portão eletrônico automatizado, simulando uma aplicação de automação industrial.
+Foi desenvolvida uma interface Web para análise dos dados de abertura do portão.
 
-O circuito utiliza:
+O Dashboard utiliza os dados presentes no arquivo `dados.csv` e apresenta gráficos para visualizar:
 
-- Arduino UNO 
-- Placa de ensaio
+- Quantidade de acionamentos por dia
+- Quantidade de acionamentos por semana
+
+---
+
+## Tecnologias Utilizadas
+
+### Hardware
+
+- Arduino UNO
+- LEDs
+- Fotoresistor (LDR)
+- Potenciômetro
+- Transistor NPN
+- Capacitor
+- Servo motor
 - Motor CC
-- Relês DPDT
+- Relês
+- Display de 7 segmentos
 - Botões
 - Resistores
-- Bateria de 9V
+- Bateria 9V
 
-O objetivo é controlar o acionamento e o movimento do portão por meio do Arduino.
+### Software
 
-Também foram adicionados:
-
-- LED vermelho
-- LED verde
-
-Os LEDs piscam alternadamente para sinalizar a saída da garagem.
+- Tinkercad
+- HTML
+- CSS
+- JavaScript
 
 ---
-
-## Dashboard Web
-
-Após o desenvolvimento do protótipo do portão, foi criada uma interface Web para análise dos dados de acionamento.
-
-O Dashboard apresenta:
-
-- Gráfico de atividade diária do portão
-- Gráfico de atividade semanal do portão
-- Visualização dos dados de forma interativa
-
-Os dados foram obtidos a partir do arquivo `dados.csv`.
-
----
-
-## Prints dos Projetos
-- Estão dentro de suas respectivas pastas, de acordo com cada exercício.
-
----
-
-## Capacidades Técnicas
-
-- Identificar tipos de hardwares e soluções disponíveis
-- Conectar aplicações gráficas
-- Trabalhar com sensores e atuadores
-- Desenvolver interfaces visuais interativas
-- Realizar visualização de dados
-
-
-## Dashboard Web
-
-O Dashboard pode ser executado diretamente pelo navegador.
-
-Está publicado no GitHub Pages:
-https://dudamssr.github.io/ativportao/
+### Prints
+- Todos os prints estão em suas respectivas pastas e nomeados de acordo com as situações ou problemas.
